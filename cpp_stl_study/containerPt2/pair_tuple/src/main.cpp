@@ -59,4 +59,12 @@ int main() {
 
     auto [hi1, h12, hi3] = Day3;
     std::cout << hi1 << " " << h12 << " " << hi3 << std::endl;
+
+    // dictionary key
+    std::map<std::tuple <std::string, int, int> , int> dictionary;
+    dictionary.insert(std::make_pair(Day1, 10));
+    dictionary.insert(std::make_pair(Day2, 20));
+    dictionary.insert(std::make_pair(Day3, 30));
+    
+    std::cout << "Element Day1 in dictionary is " << dictionary[Day1] << std::endl;
 }
