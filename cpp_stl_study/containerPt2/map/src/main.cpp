@@ -1,8 +1,10 @@
 #include <iostream> 
 #include <map>
+#include <unordered_map>
 
 int main() {
 
+    // map
     std::map<std::string, std::string> office = {{"Lea", "Robotics"},
                                                 {"Kevack", "Robotics"},
                                                 {"Jean", "Platform"},
@@ -39,6 +41,17 @@ int main() {
         office.insert(std::move(nh));
     }
     for (auto it: office) {
+        std::cout << it.first << " " << it.second << std::endl;
+    }
+
+    // unordered_map 
+    std::cout << std::endl;
+    std::cout << "UNORDERED MAP" << std::endl;
+    std::unordered_map<int, std::string> office2 = {{1, "Robotics"},
+                                                    {5, "Robotics"},
+                                                    {3, "Platform"},
+                                                    {100, "Robotics"}};
+    for (auto it: office2) {
         std::cout << it.first << " " << it.second << std::endl;
     }
 }
