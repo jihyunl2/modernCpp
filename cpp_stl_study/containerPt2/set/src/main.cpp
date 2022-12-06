@@ -2,6 +2,20 @@
 #include <tuple>
 #include <iostream>
 
+void print_int(const std::set<int> & set_) {
+    for (auto i : set_) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+}
+
+void print_string(const std::set<std::string, std::greater<std::string>> & set_) {
+    for (auto i : set_) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+}
+
 int main() {
 
     // math (unordered/sorted, unique)
@@ -11,17 +25,11 @@ int main() {
 
     std::cout << (numbers1 == numbers2) << std::endl;
     std::cout << (numbers1 == numbers3) << std::endl;
-    for (auto i : numbers2) {
-        std::cout << i << " "; 
-    }
-    std::cout << std::endl;
+    print_int(numbers2);
     std::cout << "Set size of numbers3: " << numbers3.size() << std::endl;
 
     std::set<std::string, std::greater<std::string>> strings{"cat", "dog", "apple", "bug"};
-    for (auto i : strings) {
-        std::cout << i << " "; 
-    }
-    std::cout << std::endl;
+    print_string(strings);
 
     using Date = std::tuple<std::string, int, int>; 
 
