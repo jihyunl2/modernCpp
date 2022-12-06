@@ -7,6 +7,8 @@
 int main() {
 
     // PAIR
+    std::cout << "PAIR:" << std::endl;
+    std::cout << std::endl;
 
     // Initialization (1)
     std::pair<int, double> A(1, 3.3); // or A = {1, 3.3}
@@ -32,4 +34,29 @@ int main() {
     }
 
     // TUPLE
+    std::cout << std::endl;
+    std::cout << "TUPLE:" << std::endl;
+    std::cout << std::endl;
+
+    std::tuple<std::string, int, int> Day1("Floatic", 6, 17);
+    std::tuple<std::string, int, int> Day2 = {"Lea", 3, 13};
+    std::tuple<std::string, int, int> Day3 = std::make_tuple("Christmas", 12, 25);
+
+    // Get w/ index
+    std::cout << std::get<0>(Day1) << " " << std::get<1>(Day1) << " " << std::get<2>(Day1) << std::endl;
+    std::cout << std::get<0>(Day2) << " " << std::get<1>(Day2) << " " << std::get<2>(Day2) << std::endl;
+    std::cout << std::get<0>(Day3) << " " << std::get<1>(Day3) << " " << std::get<2>(Day3) << std::endl;
+
+    // Get w/ type
+    std::tuple<std::string, int, double> hi("hi", 0, 1.1);
+    std::cout << std::get<std::string>(hi) << " " << std::get<int>(hi) << " " << std::get<double>(hi) << std::endl;
+
+    // tie
+    std::string name; 
+    int month, day;
+    std::tie(name, month, day) = Day2;
+    std::cout << name << " " << month << " " << day << std::endl;
+
+    auto [hi1, h12, hi3] = Day3;
+    std::cout << hi1 << " " << h12 << " " << hi3 << std::endl;
 }
