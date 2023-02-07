@@ -56,7 +56,7 @@ int main(){
     vector<Person> group {Person("Bob", 18), Person("Alice", 20), Person("Stacy", 5), Person("Brad", 5)};
     
     cout << "Before sort" << endl;
-    print_person(group); //정렬 전 출력
+    print_person(group); 
     cout << endl;
 
     cout << "After partial sort" << endl;
@@ -65,13 +65,13 @@ int main(){
     cout << endl;
 
     cout << "After name sort" << endl;
-    sort(group.begin(), group.end(), byName); //[begin, end) compare 함수 기준 정렬
-    print_person(group); //정렬 후 출력
+    sort(group.begin(), group.end(), byName); 
+    print_person(group); 
     cout << endl;
 
     cout << "After age sort" << endl;
-    sort(group.begin(), group.end(), byAge); //[begin, end) compare 함수 기준 정렬
-    print_person(group); //정렬 후 출력    
+    sort(group.begin(), group.end(), byAge); 
+    print_person(group); 
     cout << endl;
 
     // stable_sort 
